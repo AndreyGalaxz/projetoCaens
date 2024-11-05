@@ -14,7 +14,7 @@ header {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around ;
 }
 
 header .logo img {
@@ -76,8 +76,15 @@ main {
 } 
 .post-section .add-tag {
   background-color: #ccc;
-  border-radius: 50%;
+  padding: 10px;
+  border-radius: 100%;
   cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .post-section .buttons button {
   margin: 1em;
@@ -89,8 +96,6 @@ main {
 .post-section textarea {
   width: 100%;
   height: 6em;
-  margin-top: 15px;
-  padding: 10px;
   border-radius: 10px;
   background-color: #f5f0e3;
 }
@@ -123,7 +128,9 @@ main {
   color: #444;
   background-color: #f5f0e3;
 }
-
+.upload-image {
+  margin-left: 0;
+}
 
 #pesquisar {
 padding: 5px 15px 5px 20px;
@@ -131,8 +138,14 @@ background-color: #d2c7a7;
 }
 
 #internoBranco {
+  
   text-align: left;
   padding: 10px;
   border-radius: 30px;
   background-color: #f5f0e3;
+}
+
+#caixaTexto, h2, .tags {
+  margin-top: 5px;
+  margin-left:10px ;
 }
