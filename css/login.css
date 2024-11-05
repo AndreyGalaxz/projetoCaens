@@ -29,6 +29,7 @@
     width: 60%;
 }
 #tituloTipoLogin {
+    margin-left: 3em;
     color: var(--texto-padrao);
 }
 .blocoOpcao:hover  {
