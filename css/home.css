@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+header {
+  background-color: #2e5634;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  height: 80px;
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 0.8;
+  justify-content: center;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav input[type="text"] {
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  
+}
+
+header .requests {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+
+.post-section {
+  background-color: #d2c7a7;
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.post-section h2 {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #444;
+} 
+
+.post-section .tags {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.post-section .tags span {
+  
+  color: #444;
+}
+
+.post-section .add-tag {
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.post-section .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.post-section .buttons button {
+  margin: 1em;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+
+
+.post-section textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f5f0e3;
+}
+
+.post {
+  background-color: #d2c7a7;
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post p {
+  color: #444;
+  font-size: 14px;
+}
+
+.post-content {
+  height: 400px;
+  width: auto;
+  background-color: #f5f0e3;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.logo {
+
+  filter: saturate(0) invert(100) brightness(1000%);
+}
+
+.lost-item {
+  color: #f5f0e3;
+  background-color: #2e5634;
+}
+.upload-image, .postButton {
+  color: #444;
+  background-color: #f5f0e3;
+}
+
+
+#pesquisar {
+padding: 5px 15px 5px 20px;
+background-color: #d2c7a7;
+}
+
+#internoBranco {
+  text-align: left;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #f5f0e3;
+}
