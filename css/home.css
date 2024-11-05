@@ -58,48 +58,27 @@ main {
   margin-top: 20px;
 }
 
-
-
-.post-section {
-  background-color: #d2c7a7;
+.post, .post-section {
+  width: 50%;
+  background-color: #d2c7a7;  
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
   padding: 20px;
-  width: 60%;
   border-radius: 10px;
-  margin-bottom: 20px;
 }
+
 
 .post-section h2 {
   font-size: 16px;
-  margin-top: 5px;
+ 
   color: #444;
 } 
-
-.post-section .tags {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.post-section .tags span {
-  
-  color: #444;
-}
-
 .post-section .add-tag {
   background-color: #ccc;
-  border: none;
   border-radius: 50%;
-  padding: 5px 10px;
   cursor: pointer;
 }
-
-.post-section .buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
 .post-section .buttons button {
   margin: 1em;
   padding: 10px 40px;
@@ -107,27 +86,16 @@ main {
   border-radius: 30px;
   cursor: pointer;
 }
-
-
-
 .post-section textarea {
   width: 100%;
-  height: 100px;
+  height: 6em;
   margin-top: 15px;
   padding: 10px;
   border-radius: 10px;
   background-color: #f5f0e3;
 }
 
-.post {
-  background-color: #d2c7a7;
-  margin: 20px;
-  padding: 20px;
-  width: 40%;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-}
+
 
 .post p {
   color: #444;
