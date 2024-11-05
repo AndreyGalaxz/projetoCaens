@@ -14,10 +14,19 @@
     flex-direction: column;
 }
 #loginItens2 {
-    align-items: center;
+    
+    justify-content: center;
+    align-content: center;
+    
     display: flex;
     flex-direction: row-reverse;
     color: var(--backgroud-padrao);
+}
+
+#itensLogin2 {
+    justify-content: center;
+    margin: 2em;
+    width: 60%;
 }
 #tituloTipoLogin {
     color: var(--texto-padrao);
@@ -28,8 +37,14 @@
 }
 
 #logoCaens {
-    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
 }
+
+
+
 
 #loginBlocoPrincipal {
     border-radius: 10px;
@@ -39,4 +54,11 @@
 
 .componenteBlocoPrincipalLogin {
     margin-top: 10px;
+}
+
+.inputBlocoPrincipalLogin {
+    width: 100%;
+    background-color: var(--backgroud-padrao);
+    border-radius: 5px;
+    padding: 10px;
 }
