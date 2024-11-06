@@ -21,7 +21,7 @@
 .postItemSituacao {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #situacao {
@@ -40,6 +40,26 @@
     margin-top: 20px;
     padding: 5px 15px 5px 20px;
     border-radius: 50px;
+}
+
+.postItemSituacaoRequest {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.botaoRequest {
+    color: aliceblue;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+#recusar {
+    background-color: rgb(214, 103, 103);
+}
+#aceitar {
+    background-color: green;
 }
 /*
  <div id="situacao">SITUAÇÃO:PERDIDO</div>
