@@ -7,9 +7,11 @@
 
         <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/defaultStyles.css">
-        <link rel="stylesheet" href="/css/login.css">
+        
 
-        <link rel="stylesheet" href="/css/home.css">
+        
+
+        <link rel="stylesheet" href="../css/meusAchadosPerdidos.css">
         <title>Projeto CAENS - Login</title>
     </head>
     <body>
@@ -18,8 +20,8 @@
               <a href="home.html"><img src="../src-images/logo_ifba_branco.png" alt="Instituto Federal Bahia"></a>
             </div>
             <nav>
-              <a href="#">MEUS ACHADOS</a>
-              <a href="#">MEUS PERDIDOS</a>
+              <a href="../html/meusAchados.html">MEUS ACHADOS</a>
+              <a href="../html/meusPerdidos.html">MEUS PERDIDOS</a>
               <input id="pesquisar" type="text" placeholder="PESQUISAR...">
               <a href="">
 
@@ -33,39 +35,37 @@
               </div>
             </a>    
             </nav>
-            <a href="#" class="requests">REQUESTS</a>
+            <a href="./requestsModerador.html" class="requests">REQUESTS</a>
           </header>
         
+
+
           <main>
-            <section class="post-section">
-              <div id="internoBranco">
-                  <h2>COMPARTILHE AQUI O QUE VOCÊ ACHOU:</h2>
-                  <textarea id="caixaTexto" placeholder="Digite aqui o que você perdeu..."></textarea>
-                  <div class="tags">
-                    <span>TAGS:</span>
-                    <div class="plusAdd">
-                      <img src="/src-images/plus.png" class="add-tag" alt="plus">
-                    </div>
-                    
-                    
-                  </div>
-              </div>
-              
-              <div class="buttons">
-                <div> 
-                  <button class="lost-item" onclick="alterarBotao()">ITEM PERDIDO</button>
-                  <button class="upload-image">IMAGEM</button>
+            <div class="postContainer">
+              <div class="postContainerItem">        
+                <p class="postContainerItemChild">descrição do item perdido</p>
+                <div class="postItemTags" class="postContainerItemChild">
+                  
+                  <div class="tagItem">#relogio</div>
+                  <div class="tagItem">#ifba</div>
+                  <div class="tagItem">#recreio</div>
+                  <div class="tagItem">#prata</div>
+                  <div class="tagItem">#prata</div>
+                  
+                  
                 </div>
-                
-                <button class="postButton" >POSTAR</button>
+
               </div>
-            </section>
-        
-            <section class="post">
-              <p>14:00 | 00/00/2000</p>
-              <div class="post-content"></div>
-            </section>
-          </main>
+              <div class="postItemSituacao">
+                <div class="postItemSituacaoChild" id="situacao">SITUAÇÃO:PERDIDO</div>
+                <div class="postItemSituacaoChild" id="status">APROVADO</div>
+                <div class="postItemSituacaoChild" id="horaPost">12:00 | 01/02/2024</div>
+
+                <div>ACEITAR</div>
+                <div>RECUSAR</div>
+              </div>
+            </div>
+          </main>     
     </body>
     <script src="/javascript/home.js"></script>
     </html>
