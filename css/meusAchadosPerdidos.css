@@ -1,0 +1,49 @@
+.postItemTags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.postContainerItemChild {
+    margin: 2em;
+}
+
+.postContainerItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tagItem {
+    margin: 10px;
+}
+
+.postItemSituacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#situacao {
+    background-color: #AEA283;
+}
+
+#status {
+    background-color: green;
+}
+
+#horaPost, #status{
+    color: aliceblue;
+}
+
+.postItemSituacaoChild {
+    margin-top: 20px;
+    padding: 5px 15px 5px 20px;
+    border-radius: 50px;
+}
+/*
+ <div id="situacao">SITUAÇÃO:PERDIDO</div>
+                <div id="status">APROVADO</div>
+                <div id="horaPost">12:00 | 01/02/2024</div>
+
+*/
