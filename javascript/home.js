@@ -16,3 +16,23 @@ function alterarBotao() {
     }
 }
 
+
+        const popup = document.getElementById('filterPopup');
+        const popupButton = document.getElementById('openPopup');
+
+        popupButton.addEventListener('click', function (event) {
+            event.preventDefault(); // evita redirecionamento
+            if (popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block'; // mostra o pop-up
+            } else {
+                popup.style.display = 'none'; // esconde o pop-up
+            }
+        });
+
+        // fecha o pop-up ao clicar fora dele
+        window.addEventListener('click', function (event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+

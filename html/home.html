@@ -22,16 +22,16 @@
               <a href="../html/meusAchados.html">MEUS ACHADOS</a>
               <a href="../html/meusPerdidos.html">MEUS PERDIDOS</a>
               <input id="pesquisar" type="text" placeholder="PESQUISAR...">
-              <a href="">
-
-                
-              <div class="icon">
-                <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z" stroke="#F2E8CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>     
-                
-                
-              </div>
+              <a href="#" id="openPopup">  
+                <div class="icon" id="filter">
+                    <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z" 
+                              stroke="#F2E8CF" 
+                              stroke-width="4" 
+                              stroke-linecap="round" 
+                              stroke-linejoin="round"/>
+                    </svg> 
+                </div>
             </a>    
             </nav>
             <a href="../requestsModerador.html" class="requests">REQUESTS</a>
@@ -67,6 +67,23 @@
               <div class="post-content"></div>
             </section>
           </main>
+          <div id="filterPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+                <h2>Filtrar</h2>
+                <div class="filters">
+                    <div>
+                        <h3>Por categoria</h3>
+                        <button>Tag 1</button>
+                        <button>Tag 2</button>
+                    </div>
+                    <div>
+                        <h3>Ordenar por:</h3>
+                        <button>Mais Antigo</button>
+                        <button>Mais Recente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     <script src="../javascript/home.js"></script>
     </html>
