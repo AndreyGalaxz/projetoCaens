@@ -42,8 +42,10 @@
   background-color: #2e5634;
 }
 .upload-image, .postButton {
-  color: #444;
-  background-color: #f5f0e3;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fdfdfd;
+  background-color: #4e301f;
 }
 .upload-image {
   margin-left: 0;
@@ -52,6 +54,7 @@
 
 
 #internoBranco {
+  
   text-align: left;
   padding: 10px;
   border-radius: 30px;

@@ -38,51 +38,20 @@
           </header>
         
           <main>
+
+
+
             <section class="post-section">
-              <div id="internoBranco">
+              <form action="../php/formulario.php" method="POST" id="internoBranco">
                   <h2>COMPARTILHE AQUI:</h2>
-                  <textarea id="caixaTexto" placeholder="Digite aqui o que você perdeu..."></textarea>
-                  <div class="tags">
-                    <span>TAGS:</span>
-                    <div class="plusAdd">
-                      <img src="../src-images/plus.png" class="add-tag" alt="plus">
-                    </div>
-                    
-                    
-                  </div>
-              </div>
-              
-              <div class="buttons">
-                <div> 
-                  <button class="lost-item" onclick="alterarBotao()">ITEM PERDIDO</button>
-                  <button class="upload-image">IMAGEM</button>
-                </div>
-                
-                <button class="postButton" >POSTAR</button>
-              </div>
+                  <input id="descricao" id="caixaTexto" placeholder="Descreva o item perdido..." type="text" name="descricao">
+                  <input type="date" name="dataHora" id="dataHora">
+                  <button class="postButton" type="submit" name="create">ENVIAR</button>
+                  
+              </form>
             </section>
-        
-            <section class="post">
-              <p>14:00 | 00/00/2000</p>
-              <div class="post-content"></div>
-            </section>
-          </main>
-          <div id="filterPopup" class="popup" style="display: none;">
-            <div class="popup-content">
-                <h2>Filtrar: </h2>
-                <div class="filters">
-                    <div class="categoriaButton">
-                        <h3>Por categoria</h3>
-                        <button class="tagButton">Tag 1</button>
-                        <button class="tagButton">Tag 2</button>
-                    </div>
-                    <div>
-                        <h3>Ordenar por:</h3>
-                        <button>Mais Antigo</button>
-                        <button>Mais Recente</button>
-                    </div>
-                </div>
-            </div>
+        </main>
+          
         </div>
     </body>
     <script src="../javascript/home.js"></script>
