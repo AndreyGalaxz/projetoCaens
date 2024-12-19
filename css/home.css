@@ -141,6 +141,11 @@
   background-color: #555;
 }
 
+.categoriaButton button.selected {
+  background-color: #ffffff; /* Cor do botão clicado */
+  color: #444; /* Opcional: alterar a cor do texto no estado selecionado */
+}
+
 
 #filterPopup.show {
   animation: fadeIn 0.3s ease-out;
