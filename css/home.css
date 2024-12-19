@@ -73,47 +73,49 @@
   width: 30px;
 }
 
-/* Estilização do pop-up */
+
 #filterPopup {
-  position: fixed; /* Fixa o pop-up na tela */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido com opacidade */
-  display: none; /* Começa escondido */
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
-  z-index: 1000; /* Fica acima de outros elementos */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Conteúdo interno do pop-up */
+
 .popup-content {
-  background-color: #333; /* Fundo escuro */
-  color: #f2e8cf; /* Texto claro */
-  border-radius: 10px; /* Borda arredondada */
-  padding: 20px;
-  width: 90%; /* Largura responsiva */
-  max-width: 400px; /* Largura máxima */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Sombra para destacar */
+  background-color: #333;
+  color: #f2e8cf;
+  border-radius: 10px;
+  padding: 60px;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Título do pop-up */
+
 .popup-content h2 {
   margin: 0 0 20px;
   font-size: 24px;
-  text-align: center;
+  text-align: left;
 }
 
-/* Estilização dos filtros */
+
 .filters {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
 }
 
 .filters div {
-  flex: 1; /* Divisões ocupam espaço igual */
+  flex: 1;
 }
 
 .filters h3 {
@@ -121,14 +123,14 @@
   font-size: 18px;
 }
 
-/* Botões de filtro */
+
 .filters button {
-  display: block; /* Cada botão ocupa uma linha */
+  display: block;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #444; /* Fundo mais escuro */
-  color: #f2e8cf; /* Texto claro */
+  padding: 13px;
+  margin-bottom: 15px;
+  background-color: #444;
+  color: #f2e8cf;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -136,15 +138,14 @@
 }
 
 .filters button:hover {
-  background-color: #555; /* Fundo muda ao passar o mouse */
+  background-color: #555;
 }
 
-/* Animação ao abrir o pop-up */
+
 #filterPopup.show {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -154,7 +155,7 @@
   }
 }
 
-/* Responsividade */
+
 @media (max-width: 600px) {
   .popup-content {
       padding: 15px;

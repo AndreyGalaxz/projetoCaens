@@ -21,15 +21,14 @@ function alterarBotao() {
         const popupButton = document.getElementById('openPopup');
 
         popupButton.addEventListener('click', function (event) {
-            event.preventDefault(); // evita redirecionamento
+            event.preventDefault();
             if (popup.style.display === 'none' || popup.style.display === '') {
-                popup.style.display = 'block'; // mostra o pop-up
+                popup.style.display = 'block';
             } else {
-                popup.style.display = 'none'; // esconde o pop-up
+                popup.style.display = 'none';
             }
         });
 
-        // fecha o pop-up ao clicar fora dele
         window.addEventListener('click', function (event) {
             if (event.target === popup) {
                 popup.style.display = 'none';
