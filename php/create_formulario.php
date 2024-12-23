@@ -16,7 +16,7 @@
 
    echo 'descricao: '.$descricao.'<br>';
    echo 'dataHora: '.$dataHora.'<br>';
-   include 'banco.php';
+   include 'principais_funcoes.php';
    cadastrar_produto($descricao,$dataHora);
    ?>
 

@@ -1,58 +1,60 @@
-<!DOCTYPE html>
-    <html lang="pt-br">
+  <!DOCTYPE html>
+  <html lang="pt-br">
+
     <head>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/defaultStyles.css">
-        <link rel="stylesheet" href="../css/login.css">
+      <link rel="stylesheet" href="../css/reset.css">
+      <link rel="stylesheet" href="../css/defaultStyles.css">
 
-        <link rel="stylesheet" href="../css/home.css">
-        <title>Projeto CAENS - Login</title>
+      <link rel="stylesheet" href="../css/home.css">
+      <title>Projeto CAENS - FEED</title>
     </head>
+
     <body>
-        <header>
-            <div class="logo">
-              <a href="../html/home.html"><img src="../src-images/logo_ifba_branco.png" alt="Instituto Federal Bahia"></a>
-              
-            </div>
-            <nav>
-              <a href="../html/meusAchados.html">MEUS ACHADOS</a>
-              <a href="../html/meusPerdidos.html">MEUS PERDIDOS</a>
-              <input id="pesquisar" type="text" placeholder="PESQUISAR...">
-              <a href="#" id="openPopup">  
-                <div class="icon" id="filter">
-                    <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z" 
-                              stroke="#F2E8CF" 
-                              stroke-width="4" 
-                              stroke-linecap="round" 
-                              stroke-linejoin="round"/>
-                    </svg> 
-                </div>
-            </a>    
-            </nav>
-            <a href="../requestsModerador.html" class="requests">REQUESTS</a>
-          </header>
+      <header>
         
-          <main>
-
-
-
-            <section class="post-section">
-              <form action="../php/formulario.php" method="POST" id="internoBranco">
-                  <h2>COMPARTILHE AQUI:</h2>
-                  <input id="descricao" id="caixaTexto" placeholder="Descreva o item perdido..." type="text" name="descricao">
-                  <input type="date" name="dataHora" id="dataHora">
-                  <button class="postButton" type="submit" name="create">ENVIAR</button>
-                  
-              </form>
-            </section>
-        </main>
-          
+        <div class="logo">
+          <a href="../html/home.html"><img src="../src-images/logo_ifba_branco.png" alt="Instituto Federal Bahia"></a>
         </div>
+
+        <nav>
+          <a href="">MEUS ACHADOS</a>
+          <a href="">MEUS PERDIDOS</a>
+
+          <input id="pesquisar" type="text" placeholder="PESQUISAR...">
+
+          <a href="#" id="openPopup">
+            <div class="icon" id="filter">
+              <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z"
+              stroke="#F2E8CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg> 
+            </div>
+          </a>
+
+          <a href="#" class="requests">REQUESTS</a>
+        
+        </nav>
+
+      </header>
+
+      <main>
+        <!-- cada section é uma nova postagem -->
+        <section class="post-section">
+          <!-- formulário base para criar publicações -->
+          <form action="../php/create_formulario.php" method="POST" id="internoBranco">
+            <h2>COMPARTILHE AQUI:</h2>
+            <input id="caixaTexto" placeholder="Descreva o item perdido..." type="text" name="descricao">
+            <input id="dataHora" type="date" name="dataHora">
+            <button class="postButton" type="submit" name="create">ENVIAR</button>
+          </form>
+
+        </section>
+
+      </main>
+
     </body>
     <script src="../javascript/home.js"></script>
-    </html>
+  </html>

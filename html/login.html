@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/defaultStyles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-observacoes" >
+            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensLogin">
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="matricula@ifba.edu.br" name="email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" class="error"></span>
+            </div>
+
+            <button type="submit">Entrar</button>
+            <div class="login-observacoes" >
+                <a href="#">Cadastre-se</a>
+            </div>
+        </form>
+    </div>
+    <script src="../javascript/login_validate.js"></script>
+</body>
+</html>

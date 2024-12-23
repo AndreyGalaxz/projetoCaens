@@ -10,7 +10,7 @@ function cadastrar_produto($descricao, $dataHora)
         $instrucao->bindParam(":DESCRICAO", $descricao);
         $instrucao->bindParam(":DATAHORA", $dataHora);
         $instrucao->execute();
-        header('Location: index.php');
+        header('Location: create_read_home.php');
     } catch (PDOException $e) {
         die("Erro ao cadastrar produto: " . $e->getMessage());
     }
@@ -40,7 +40,7 @@ function excluir_produto($id_produto)
         $instrucao = $conn->prepare($sql);
         $instrucao->bindParam(":ID_PRODUTO", $id_produto);
         $instrucao->execute();
-        header('Location: index.php');
+        header('Location: create_read_home.php');
     } catch (PDOException $e) {
         die("Erro ao excluir produto: " . $e->getMessage());
     }
