@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/defaultStyles.css">
-        <link rel="stylesheet" href="../css/login.css">
-        <title>Projeto CAENS - Login</title>
-    </head>
-    <body>
-        <div id="loginItens2">
-           
-            <figure id="logoCaens">
-                <img src="../src-images/CAENS logo 1.png" alt="logotipo da Caens">
-            </figure>
-            
-            <div id="itensLogin2"> 
-                <p id="tituloTipoLogin">Login como docente</p>
-                <div id="loginBlocoPrincipal">
-                    <p class="componenteBlocoPrincipalLogin">Matrícula: </p>
-                    <input class="inputBlocoPrincipalLogin" type="text" placeholder="20211910003@ifba.edu.br">
-
-                    <p class="componenteBlocoPrincipalLogin">Senha: </p>
-                    <input class="inputBlocoPrincipalLogin" type="password" placeholder="sua senha">
-                    <form action="../html/home.html" id="formAcao"></form>
-                
-                </div>
-            </div>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/defaultStyles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-observacoes" >
+            <h1>BEM VINDO</h1>
+            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensLogin">
         </div>
-    </body>
-    <script src="../javascript/script.js"></script>
-    </html>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="matricula@ifba.edu.br" name="email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" class="error"></span>
+            </div>
+
+            <button type="submit">Entrar</button>
+            <div class="login-observacoes" >
+                <a href="#">Cadastre-se</a>
+            </div>
+        </form>
+    </div>
+    <script src="../javascript/login_validate.js"></script>
+</body>
+</html>
