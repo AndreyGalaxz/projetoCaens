@@ -1,8 +1,7 @@
 # projetoCaens
 projeto de achados e perdidos da Caens - ppa 731 2024
 
-## testando acesso
+## COMANDOS DE INICIALIZAÇÃO -> LINUX 
+- cd /opt/lampp
+- Xampp: sudo ./manager-linux-x64.run
 
-### teste acesso conta 2
-
-## testando o acesso (julha)
