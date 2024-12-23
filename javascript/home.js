@@ -22,6 +22,7 @@ const popupButton = document.getElementById('openPopup');
 popupButton.addEventListener('click', function (event) {
     event.preventDefault();
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    console.log("clicacado")
 });
 
 // Fecha o popup ao clicar fora dele

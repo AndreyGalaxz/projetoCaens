@@ -71,7 +71,7 @@
 
                     $id = $linha["id_produto"];
 
-                    echo '<td><a class="btnExcluir" href="../php/excluir_produto.php?id_produto=' . $id . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
+                    echo '<td><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' . $id . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
                     echo '</tr>';
                 }
 
