@@ -36,4 +36,4 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     if (isValid) {
         alert('Login realizado com sucesso!');
     }
-});
+});                                                                                                                           
