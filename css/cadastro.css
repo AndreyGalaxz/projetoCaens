@@ -1,0 +1,77 @@
+body {
+    
+    background-color:#142912 ;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cadastro-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.cadastro-observacoes {
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    color: #142912;
+}
+
+.cadastro-observacoes a {
+    margin-top: 10px;
+}
+
+#logoCaensCadastro {                                                                       
+    width: 40%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #019c22;
+    color: white;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #00e60b;
+}
+
+.error {
+    color: rgb(158, 0, 0);
+    font-size: 12px;
+    display: none;
+}
