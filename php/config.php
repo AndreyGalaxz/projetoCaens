@@ -5,8 +5,8 @@ function conectar()
     try {
         $host = 'localhost';
         $dbname = 'caens';
-        $username = 'root'; // Substitua pelo seu usuário do MySQL
-        $password = '';     // Substitua pela sua senha do MySQL (geralmente vazia no XAMPP)
+        $username = 'root';
+        $password = '';     
         
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/reset.css">
+    
     <link rel="stylesheet" href="../css/defaultStyles.css">
-    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/home.css">
 
-    <title>Projeto CAENS - Produtos</title>
+    <title>Projeto CAENS - FEED</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <a href="../html/home.html">
-                <img src="../src-images/logo_ifba_branco.png" alt="Instituto Federal Bahia">
-            </a>
+            <a href="../html/home.html"><img src="../src-images/logo_ifba_branco.png" alt="Instituto Federal Bahia"></a>
         </div>
+
         <nav>
-            <a href="../html/meusAchados.html">MEUS ACHADOS</a>
-            <a href="../html/meusPerdidos.html">MEUS PERDIDOS</a>
+            <a href="">MEUS ACHADOS</a>
+            <a href="">MEUS PERDIDOS</a>
             <input id="pesquisar" type="text" placeholder="PESQUISAR...">
-            <a href="#" id="openPopup">  
+            <a href="#" id="openPopup">
                 <div class="icon" id="filter">
                     <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z" 
-                              stroke="#F2E8CF" 
-                              stroke-width="4" 
-                              stroke-linecap="round" 
-                              stroke-linejoin="round"/>
-                    </svg> 
+                        <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z"
+                            stroke="#F2E8CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </div>
-            </a>    
+            </a>
+            <a href="" class="requests">REQUESTS</a>
         </nav>
-        <a href="../requestsModerador.html" class="requests">REQUESTS</a>
     </header>
-    
+
     <main>
+        <!-- Formulário de publicação -->
         <section class="post-section">
-            <form action="../php/formulario.php" method="POST" id="internoBranco">
+            <form action="../php/create_formulario.php" method="POST" id="internoBranco">
                 <h2>COMPARTILHE AQUI:</h2>
                 <input id="descricao" placeholder="Descreva o item perdido..." type="text" name="descricao" required>
                 <input type="date" name="dataHora" id="dataHora" required>
@@ -47,11 +45,12 @@
             </form>
         </section>
 
+        <!-- Produtos cadastrados -->
         <section class="produtos-cadastrados">
             <h2>Produtos Cadastrados</h2>
             <div>
                 <?php
-                include '../php/banco.php';
+                include '../php/principais_funcoes.php';
 
                 // Função para obter os produtos cadastrados
                 $result = get_produtos();
@@ -75,7 +74,7 @@
                     echo '<td><a class="btnExcluir" href="../php/excluir_produto.php?id_produto=' . $id . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
                     echo '</tr>';
                 }
-                
+
                 echo '</table>';
                 ?>
             </div>
@@ -84,4 +83,5 @@
 
     <script src="../javascript/home.js"></script>
 </body>
+
 </html>
