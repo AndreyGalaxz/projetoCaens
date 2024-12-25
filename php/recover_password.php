@@ -1,6 +1,8 @@
 <?php 
+include 'config.php'
 header('Content-Type: application/json');
-
+/*
+-- já está em config.php 
 $host = 'localhost';
 $dbname = 'caens';
 $username = 'root';
@@ -14,6 +16,7 @@ try {
     echo json_encode(['error' => 'Erro ao conectar ao banco de dados']);
     exit;
 }
+*/
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
