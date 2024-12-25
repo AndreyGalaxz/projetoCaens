@@ -5,3 +5,5 @@ projeto de achados e perdidos da Caens - ppa 731 2024
 - cd /opt/lampp
 - Xampp: sudo ./manager-linux-x64.run
 
+## parar serviço SQL 
+- sudo systemctl stop mysql

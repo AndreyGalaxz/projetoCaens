@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/defaultStyles.css">
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/cadastro_login.css">
     <title>Cadastro</title>
 </head>
 <body>
-    <div class="cadastro-container">
-        <div class="cadastro-observacoes">
-            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensCadastro">
+    <div class="cadastro_login-container">
+        <div class="cadastro_login-observacoes">
+            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logo_caens_cadastro_login">
         </div>
-        <form id="cadastroForm">
+        <form id="cadastro_login-form" action="../php/cadastro_login/create_cadastro.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -37,6 +37,6 @@
             <button type="submit">Cadastrar</button>
         </form>  
     </div>
-    <script src="../javascript/cadastro_validate.js"></script>
+    <script src="../javascript/user_login_cadastro_validate.js"></script>
 </body>
 </html>

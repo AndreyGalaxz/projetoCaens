@@ -9,7 +9,7 @@ body {
     height: 100vh;
 }
 
-.cadastro-container {
+.cadastro_login-container {
     background: #ffffff;
     padding: 20px;
     border-radius: 14px;
@@ -17,18 +17,18 @@ body {
     width: 400px;
 }
 
-.cadastro-observacoes {
+.cadastro_login-observacoes {
     display: flex;
     align-items: center;
     justify-content: center ;
     color: #142912;
 }
 
-.cadastro-observacoes a {
+.cadastro_login-observacoes a {
     margin-top: 10px;
 }
 
-#logoCaensCadastro {                                                                       
+#logo_caens_cadastro_login {                                                                       
     width: 40%;
 }
 

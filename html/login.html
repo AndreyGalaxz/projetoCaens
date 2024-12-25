@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/defaultStyles.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/cadastro_login.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-observacoes" >
-            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensLogin">
+    <div class="cadastro_login-container">
+        <div class="cadastro_login-observacoes" >
+            <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logo_caens_cadastro_login">
         </div>
-        <form id="loginForm">
+        <form id="cadastro_login-form">
             <div class="form-group">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" placeholder="matricula@ifba.edu.br" name="email" required>
@@ -20,9 +20,9 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-                <span id="passwordError" class="error"></span>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <span id="senhaError" class="error"></span>
             </div>
 
             <button type="submit">Entrar</button>
@@ -31,6 +31,6 @@
             </div>
         </form>
     </div>
-    <script src="../javascript/login_validate.js"></script>
+    <script src="../javascript/user_login_cadastro_validate.js""></script>
 </body>
 </html>
