@@ -4,6 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Seleciona os campos
     const emailField = document.getElementById('email');
     const passwordField = document.getElementById('password');
+
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
 
@@ -13,6 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Limpa mensagens de erro
     emailError.textContent = '';
     passwordError.textContent = '';
+    
     emailError.style.display = 'none';
     passwordError.style.display = 'none';
 
