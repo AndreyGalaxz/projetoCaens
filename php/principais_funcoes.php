@@ -1,14 +1,15 @@
 <?php
 include 'config.php';
 
-function cadastrar_produto($descricao, $dataHora)
+function cadastrar_produto($descricao, $dataHora, $tipo)
 {
     try {
         $conn = conectar();
-        $sql = "INSERT INTO produtos_perdidos(descricao, dataHora) VALUES (:DESCRICAO, :DATAHORA)";
+        $sql = "INSERT INTO produtos_perdidos(descricao, dataHora, tipo) VALUES (:DESCRICAO, :DATAHORA, :TIPO)";
         $instrucao = $conn->prepare($sql);
         $instrucao->bindParam(":DESCRICAO", $descricao);
         $instrucao->bindParam(":DATAHORA", $dataHora);
+        $instrucao->bindParam(":TIPO", $tipo);
         $instrucao->execute();
         header('Location: create_read_home.php');
     } catch (PDOException $e) {
@@ -18,7 +19,7 @@ function cadastrar_produto($descricao, $dataHora)
 
 function get_produtos() {
     $conn = conectar();
-    $sql = "SELECT id_produto, descricao, dataHora FROM produtos_perdidos";
+    $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos_perdidos";
 
     try {
         $stmt = $conn->query($sql);

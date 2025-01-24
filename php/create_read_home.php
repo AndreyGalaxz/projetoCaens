@@ -41,6 +41,10 @@
                 <h2>COMPARTILHE AQUI:</h2>
                 <input id="descricao" placeholder="Descreva o item perdido..." type="text" name="descricao" required>
                 <input type="date" name="dataHora" id="dataHora" required>
+                <select name="tipo" id="tipo" required>
+                    <option value="1">Achado</option>
+                    <option value="2">Perdido</option>
+                </select>
                 <button class="postButton" type="submit" name="create">ENVIAR</button>
             </form>
         </section>
@@ -51,6 +55,12 @@
             <div>
                 <?php
                 include '../php/principais_funcoes.php';
+                
+            
+                
+
+                
+
 
                 // Função para obter os produtos cadastrados
                 $result = get_produtos();
@@ -60,14 +70,28 @@
                 echo '<th>Código</th>';
                 echo '<th>Descrição</th>';
                 echo '<th>Data e Hora</th>';
+                echo '<th>Tipo</th>';
                 echo "<th colspan='2' style='text-align: center'>Ações</th>";
                 echo '</tr>';
 
                 foreach ($result as $linha) {
+
+                    switch ($linha["tipo"]) {
+                        case 1:
+                            $tipoTexto = 'Achado';
+                            break;
+                        case 2:
+                            $tipoTexto = 'Perdido';
+                            break;
+                        default:
+                            $tipoTexto = 'Desconhecido'; // Caso o valor seja diferente de 1 ou 2
+                    } 
+
                     echo '<tr>';
                     echo '<td>' . $linha["id_produto"] . '</td>';
                     echo '<td>' . $linha["descricao"] . '</td>';
                     echo '<td>' . $linha["dataHora"] . '</td>';
+                    echo '<td>' . $tipoTexto . '</td>';
 
                     $id = $linha["id_produto"];
 

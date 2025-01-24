@@ -48,3 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tagSelect();
 });
 
+function changeColor(button) {
+    button.style.backgroundColor = 'green';  // Muda a cor de fundo do botão para verde
+}
