@@ -19,7 +19,7 @@
         </div>
 
         <nav>
-            <a href="">MEUS ACHADOS</a>
+                    
             <a href="">MEUS PERDIDOS</a>
             <input id="pesquisar" type="text" placeholder="PESQUISAR...">
             <a href="#" id="openPopup">
@@ -51,60 +51,46 @@
 
         <!-- Produtos cadastrados -->
         <section class="produtos-cadastrados">
-            <h2>Produtos Cadastrados</h2>
+            <h2 id=titulo_produtos_cadastrados>PRODUTOS</h2>
             <div>
+            <table class="container_produtos_home">                                                                                 
+                <thead>
+                <tr class="linha_produtos_home">
+                <th class="item_titulo_home">Código</th>
+                <th class="item_titulo_home">Descrição</th>
+                <th class="item_titulo_home">Data e Hora</th>
+                <th class="item_titulo_home">Tipo</th>
+                <th class="item_titulo_home">Ações</th>
+                </tr>
+                </thead>
                 <?php
                 include '../php/principais_funcoes.php';
-                
-            
-                
-
-                
-
-
                 // Função para obter os produtos cadastrados
+
                 $result = get_produtos();
-
-                echo '<table>';
-                echo '<tr>';
-                echo '<th>Código</th>';
-                echo '<th>Descrição</th>';
-                echo '<th>Data e Hora</th>';
-                echo '<th>Tipo</th>';
-                echo "<th colspan='2' style='text-align: center'>Ações</th>";
-                echo '</tr>';
-
                 foreach ($result as $linha) {
+                $tipoTexto = match ($linha["tipo"]) {
+                1 => 'Achado',
+                2 => 'Perdido',
+                default => 'Desconhecido',
+                };
 
-                    switch ($linha["tipo"]) {
-                        case 1:
-                            $tipoTexto = 'Achado';
-                            break;
-                        case 2:
-                            $tipoTexto = 'Perdido';
-                            break;
-                        default:
-                            $tipoTexto = 'Desconhecido'; // Caso o valor seja diferente de 1 ou 2
-                    } 
-
-                    echo '<tr>';
-                    echo '<td>' . $linha["id_produto"] . '</td>';
-                    echo '<td>' . $linha["descricao"] . '</td>';
-                    echo '<td>' . $linha["dataHora"] . '</td>';
-                    echo '<td>' . $tipoTexto . '</td>';
-
-                    $id = $linha["id_produto"];
-
-                    echo '<td><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' . $id . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
-                    echo '</tr>';
-                }
-
-                echo '</table>';
+                echo '<tr class="linha_produtos_home">';
+                echo '<td class="produto_home">' . htmlspecialchars($linha["id_produto"]) . '</td>';
+                echo '<td class="produto_home">' . htmlspecialchars($linha["descricao"]) . '</td>';
+                echo '<td class="produto_home">' . htmlspecialchars($linha["dataHora"]) . '</td>';
+                echo '<td class="produto_home">' . $tipoTexto . '</td>';
+                echo '<td class="produto_home"><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' 
+                    . htmlspecialchars($linha["id_produto"]) 
+                    . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
+                echo '</tr>';
+                }   
                 ?>
-            </div>
+                </div>
+            </table>
         </section>
     </main>
-
+    
     <script src="../javascript/home.js"></script>
 </body>
 

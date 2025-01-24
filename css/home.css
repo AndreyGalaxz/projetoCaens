@@ -178,3 +178,75 @@
       padding: 8px;
   }
 }
+
+
+
+
+
+/*
+echo '<tr class="container_titulo_home" >';
+echo '<th class="item_titulo_home">Código</th>';
+*/
+#titulo_produtos_cadastrados {
+  font-family: 'Arial', sans-serif; /* Fonte bonita e moderna */
+  font-size: 2em; /* Tamanho maior */
+  text-align: center; /* Centraliza o texto */
+  color: #1b1b1b; /* Cor verde */
+  
+  letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
+}
+/* Estilo geral da tabela */
+.container_produtos_home {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1px auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Estilo para os cabeçalhos */
+.container_produtos_home thead th {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para as linhas */
+.container_produtos_home tbody tr {
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.container_produtos_home tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.container_produtos_home tbody tr:hover {
+  background-color: #e6e6e6;
+}
+
+/* Estilo para células */
+.container_produtos_home td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para o link de excluir */
+.btnExcluir {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #ff0000;
+  border-radius: 3px;
+  background-color: #ffe6e6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btnExcluir:hover {
+  background-color: #ffcccc;
+  color: #990000;
+}
