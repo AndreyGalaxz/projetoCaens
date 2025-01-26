@@ -1,5 +1,12 @@
 <?php
 include 'config.php';
+// pegando valores do javascript 
+if (isset($_GET['valor'])) {
+    $tipo_consulta = $_GET['valor'];
+    
+} else {
+    
+}
 
 function cadastrar_produto($descricao, $dataHora, $tipo)
 {
@@ -17,9 +24,15 @@ function cadastrar_produto($descricao, $dataHora, $tipo)
     }
 }
 
-function get_produtos() {
+function get_produtos($tipo_consulta) {
     $conn = conectar();
-    $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
+    if($tipo_consulta == 1) {
+        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1";
+    } else if($tipo_consulta == 2) {
+        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2";
+    } else {
+        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
+    }
 
     try {
         $stmt = $conn->query($sql);

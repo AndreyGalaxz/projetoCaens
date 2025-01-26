@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
+    
+    
     <link rel="stylesheet" href="../css/defaultStyles.css">
     <link rel="stylesheet" href="../css/home.css">
 
@@ -19,9 +21,12 @@
         </div>
 
         <nav>
-                    
-            <a href="">MEUS PERDIDOS</a>
+            <button id="todos">TODOS</button>    
+            <button id="achados">ACHADOS</button>
+            <button id="perdidos">PERDIDOS</button>
+            
             <input id="pesquisar" type="text" placeholder="PESQUISAR...">
+
             <a href="#" id="openPopup">
                 <div class="icon" id="filter">
                     <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,9 +35,10 @@
                     </svg>
                 </div>
             </a>
+
             <a href="" class="requests">REQUESTS</a>
         </nav>
-    </header>
+    </header>   
 
     <main>
         <!-- Formulário de publicação -->
@@ -66,13 +72,15 @@
                 <?php
                 include '../php/principais_funcoes.php';
                 // Função para obter os produtos cadastrados
+                $tipo_consulta = $tipo_consulta ?? 3;
 
-                $result = get_produtos();
+                $result = get_produtos($tipo_consulta);   
+
                 foreach ($result as $linha) {
                 $tipoTexto = match ($linha["tipo"]) {
-                1 => 'Achado',
-                2 => 'Perdido',
-                default => 'Desconhecido',
+                    1 => 'Achado',
+                    2 => 'Perdido',
+                    default => 'Desconhecido',
                 };
 
                 echo '<tr class="linha_produtos_home">';
