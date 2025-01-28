@@ -25,7 +25,7 @@
             <button id="achados">ACHADOS</button>
             <button id="perdidos">PERDIDOS</button>
             
-            <input id="pesquisar" type="text" placeholder="PESQUISAR...">
+<!--  <input id="pesquisar" type="text" placeholder="PESQUISAR...">
 
             <a href="#" id="openPopup">
                 <div class="icon" id="filter">
@@ -34,8 +34,8 @@
                             stroke="#F2E8CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-            </a>
-
+            </a> 
+            -->
             <a href="" class="requests">REQUESTS</a>
         </nav>
     </header>   
@@ -68,7 +68,7 @@
                 <th class="item_titulo_home">Tipo</th>
                 <th class="item_titulo_home">aceitar</th>
                 <th class="item_titulo_home">remover</th>
-                </tr>
+                </tr>   
                 </thead>
 
 
