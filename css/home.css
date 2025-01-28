@@ -234,6 +234,20 @@ echo '<th class="item_titulo_home">Código</th>';
 }
 
 /* Estilo para o link de excluir */
+.btnAceitar {
+  color: #01c00a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #00ff40;
+  border-radius: 3px;
+  background-color: #e8ffe6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btnAceitar:hover {
+  background-color: #d2ffcc;
+  color: #009921;
+}
 .btnExcluir {
   color: #ff0000;
   text-decoration: none;

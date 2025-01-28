@@ -66,9 +66,12 @@
                 <th class="item_titulo_home">Descrição</th>
                 <th class="item_titulo_home">Data e Hora</th>
                 <th class="item_titulo_home">Tipo</th>
-                <th class="item_titulo_home">Ações</th>
+                <th class="item_titulo_home">aceitar</th>
+                <th class="item_titulo_home">remover</th>
                 </tr>
                 </thead>
+
+
                 <?php
                 include '../php/principais_funcoes.php';
                 // Função para obter os produtos cadastrados
@@ -88,9 +91,14 @@
                 echo '<td class="produto_home">' . htmlspecialchars($linha["descricao"]) . '</td>';
                 echo '<td class="produto_home">' . htmlspecialchars($linha["dataHora"]) . '</td>';
                 echo '<td class="produto_home">' . $tipoTexto . '</td>';
+                echo '<td class="produto_home"><a class="btnAceitar" href="../php/aceitar_produto.php?id_produto=' 
+                    . htmlspecialchars($linha["id_produto"]) 
+                    . '" onclick="return confirm(\'Tem certeza que deseja aceitar este produto?\');">Aceitar</a></td>';
+
                 echo '<td class="produto_home"><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' 
                     . htmlspecialchars($linha["id_produto"]) 
                     . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
+
                 echo '</tr>';
                 }   
                 ?>

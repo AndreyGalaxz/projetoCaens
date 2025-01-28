@@ -59,5 +59,20 @@ function excluir_produto($id_produto)
         die("Erro ao excluir produto: " . $e->getMessage());
     }
 }
+
+
+function aceitar_produto($id_produto)
+{
+    try {
+        $conn = conectar();
+        $sql = "DELETE FROM produtos WHERE id_produto = :ID_PRODUTO";
+        $instrucao = $conn->prepare($sql);
+        $instrucao->bindParam(":ID_PRODUTO", $id_produto);
+        $instrucao->execute();
+        header('Location: create_read_home.php');
+    } catch (PDOException $e) {
+        die("Erro ao excluir produto: " . $e->getMessage());
+    }
+}
 ?>
             
