@@ -1,5 +1,5 @@
 <?php 
-
+include 'config.php';
 function cadastrar_usuario($nome, $email, $senha)
 {
     try {

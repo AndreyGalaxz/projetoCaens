@@ -1,5 +1,4 @@
 <?php
-include 'config.php';
 include 'cadastros_crud.php';
 // pegando valores do javascript 
 if (isset($_GET['valor'])) {
@@ -8,8 +7,6 @@ if (isset($_GET['valor'])) {
 } else {
     
 }
-
-
 
 function get_produtos($tipo_consulta) {
     $conn = conectar();

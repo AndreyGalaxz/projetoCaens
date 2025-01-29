@@ -1,4 +1,5 @@
 document.getElementById('cadastroForm').addEventListener('submit', function (event) {
+    // Impede o comportamento padrão de envio do formulário
     event.preventDefault();
 
     // Seleciona os campos
@@ -56,8 +57,10 @@ document.getElementById('cadastroForm').addEventListener('submit', function (eve
         isValid = false;
     }
 
-    // Se tudo for válido, simula o sucesso do cadastro
+    // Se tudo for válido, envia o formulário para o PHP
     if (isValid) {
-        alert('Cadastro realizado com sucessoii!');
+        alert('Cadastro realizado com sucesso!');
+        // Envia o formulário manualmente
+        this.submit();
     }
 });

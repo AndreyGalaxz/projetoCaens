@@ -12,10 +12,6 @@
         <div class="cadastro-observacoes">
             <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensCadastro">
         </div>
-        <form action="../php/cadastro_usuario.php">
-            <input type="text">
-
-        </form>
         <form id="cadastroForm" method="post" action="../php/cadastro_usuario.php">
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -38,7 +34,7 @@
                 <span id="confirmarSenhaError" class="error"></span>
             </div>
             
-            <button type="submit">Cadastrar</button>
+            <a href="../php/create_read_home.php"> <input type="submit" value="Cadastrar" id="cadastrar"> </a>
         </form>  
     </div>
     <script src="../javascript/cadastro_validate.js"></script>
