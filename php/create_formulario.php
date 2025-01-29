@@ -13,9 +13,11 @@
     $descricao = $_POST['descricao'];
     $dataHora = $_POST['dataHora'];
     $tipo = $_POST['tipo'];
+
     echo 'descricao: '.$descricao.'<br>';
     echo 'dataHora: '.$dataHora.'<br>';
     echo 'tipo: '.$tipo.'<br>';
+    
     include 'funcoes_produtos.php';
     cadastrar_produto($descricao,$dataHora,$tipo);
     ?>

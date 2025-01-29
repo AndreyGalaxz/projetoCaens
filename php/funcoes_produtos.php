@@ -46,8 +46,6 @@ function excluir_produto($id_produto)
         die("Erro ao excluir produto: " . $e->getMessage());
     }
 }
-
-
 function aceitar_produto($id_produto)
 {
     try {

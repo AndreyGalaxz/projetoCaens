@@ -19,11 +19,6 @@ function cadastrar_usuario($nome, $email, $senha)
 }
 
 
-
-
-
-
-
 function cadastrar_produto($descricao, $dataHora, $tipo)
 {
     try {
