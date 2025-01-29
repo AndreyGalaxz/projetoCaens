@@ -33,9 +33,4 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         passwordError.style.display = 'block';
         isValid = false;
     }
-
-    // Se tudo for válido, submete o formulário (aqui simulamos o sucesso)
-    if (isValid) {
-        alert('Login realizado com sucesso!');
-    }
 });                                                                                                                           

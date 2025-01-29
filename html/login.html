@@ -12,7 +12,9 @@
         <div class="login-observacoes" >
             <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensLogin">
         </div>
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="../php/login.php">
+
+            
             <div class="form-group">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" placeholder="matricula@ifba.edu.br" name="email" required>
@@ -21,16 +23,19 @@
 
             <div class="form-group">
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="senha" required>
                 <span id="passwordError" class="error"></span>
             </div>
-            <a href="../php/create_read_home.php">aa</a>
-            <button type="submit">Entrar</button>
+
+
+            <input type="submit" value="login">
+
+
             <div class="login-observacoes" >
                 <a href="../html/cadastro.html">Cadastre-se</a>
             </div>
         </form>
     </div>
-    <script src="../javascript/login_validate.js"></script>
+    <!-- <script src="../javascript/login_validate.js"></script> --> 
 </body>
 </html>
