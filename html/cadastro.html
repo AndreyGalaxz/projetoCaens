@@ -12,7 +12,7 @@
         <div class="cadastro-observacoes">
             <img src="../src-images/CAENS logo 1.png" alt="logo caens" id="logoCaensCadastro">
         </div>
-        <form id="cadastroForm">
+        <form id="cadastroForm" method="post" action="../php/cadastro_usuario.php">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -33,7 +33,7 @@
                 <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
                 <span id="confirmarSenhaError" class="error"></span>
             </div>
-
+            
             <button type="submit">Cadastrar</button>
         </form>  
     </div>

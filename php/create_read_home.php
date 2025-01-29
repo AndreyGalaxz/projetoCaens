@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    
-    
     <link rel="stylesheet" href="../css/defaultStyles.css">
     <link rel="stylesheet" href="../css/home.css">
 
@@ -24,20 +22,11 @@
             <button id="todos">TODOS</button>    
             <button id="achados">ACHADOS</button>
             <button id="perdidos">PERDIDOS</button>
-            
-<!--  <input id="pesquisar" type="text" placeholder="PESQUISAR...">
-
-            <a href="#" id="openPopup">
-                <div class="icon" id="filter">
-                    <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40.3332 5.625H3.6665L18.3332 23.3625V35.625L25.6665 39.375V23.3625L40.3332 5.625Z"
-                            stroke="#F2E8CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </a> 
-            -->
-            <a href="" class="requests">REQUESTS</a>
+            <button id="perdidos">REQUEST</button>
         </nav>
+
+
+
     </header>   
 
     <main>
@@ -73,7 +62,7 @@
 
 
                 <?php
-                include '../php/principais_funcoes.php';
+                include '../php/funcoes_produtos.php';
                 // Função para obter os produtos cadastrados
                 $tipo_consulta = $tipo_consulta ?? 3;
 

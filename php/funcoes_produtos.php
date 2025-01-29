@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+include 'cadastros_crud.php';
 // pegando valores do javascript 
 if (isset($_GET['valor'])) {
     $tipo_consulta = $_GET['valor'];
@@ -8,21 +9,7 @@ if (isset($_GET['valor'])) {
     
 }
 
-function cadastrar_produto($descricao, $dataHora, $tipo)
-{
-    try {
-        $conn = conectar();
-        $sql = "INSERT INTO produtos(descricao, dataHora, tipo) VALUES (:DESCRICAO, :DATAHORA, :TIPO)";
-        $instrucao = $conn->prepare($sql);
-        $instrucao->bindParam(":DESCRICAO", $descricao);
-        $instrucao->bindParam(":DATAHORA", $dataHora);
-        $instrucao->bindParam(":TIPO", $tipo);
-        $instrucao->execute();
-        header('Location: create_read_home.php');
-    } catch (PDOException $e) {
-        die("Erro ao cadastrar produto: " . $e->getMessage());
-    }
-}
+
 
 function get_produtos($tipo_consulta) {
     $conn = conectar();

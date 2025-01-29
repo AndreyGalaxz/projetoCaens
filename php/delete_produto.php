@@ -1,5 +1,5 @@
 <?php
-include 'principais_funcoes.php';
+include 'funcoes_produtos.php';
 
 if (isset($_GET['id_produto'])) {
     $id_produto = intval($_GET['id_produto']); // Garante que o ID seja um número inteiro

@@ -58,6 +58,6 @@ document.getElementById('cadastroForm').addEventListener('submit', function (eve
 
     // Se tudo for válido, simula o sucesso do cadastro
     if (isValid) {
-        alert('Cadastro realizado com sucesso!');
+        alert('Cadastro realizado com sucessoii!');
     }
 });
