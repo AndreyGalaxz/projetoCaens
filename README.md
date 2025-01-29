@@ -8,5 +8,3 @@ projeto de achados e perdidos da Caens - ppa 731 2024
 ## Diferença GET E POST
 Get passa parâmetros pela URL 
 Post passa parâmetros pela requisição, ficam escondidos
-
-## TESTE conexão
