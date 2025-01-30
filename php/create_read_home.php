@@ -23,6 +23,9 @@
             <button id="achados">ACHADOS</button>
             <button id="perdidos">PERDIDOS</button>
             <button id="perdidos">REQUEST</button>
+            <form action="../php/logout.php" method="post">
+                <a href="#"> <input type="submit" value="LOGOUT" id="logout"> </a>
+            </form>
         </nav>
 
 
@@ -64,7 +67,6 @@
                 <?php
                 session_start();
                 include '../php/funcoes_produtos.php';
-                // Função para obter os produtos cadastrados
                 $tipo_consulta = $tipo_consulta ?? 3;
                 echo 'email usuario:' . htmlspecialchars($_SESSION['email']) . '';
                 echo 'nome usuario:' . htmlspecialchars($_SESSION['nome']) . '';
