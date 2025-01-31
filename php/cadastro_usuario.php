@@ -10,11 +10,11 @@
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = $_POST['senha'];       
 
     echo 'nome: '.$nome.'<br>';
     echo 'email: '.$email.'<br>';
-    echo 'senha: '.$senha.'<br>';
+    echo 'senha : '.$senha.'<br>';
     include 'cadastros_crud.php';
 
     cadastrar_usuario($nome,$email,$senha);

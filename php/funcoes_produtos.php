@@ -10,13 +10,26 @@ if (isset($_GET['valor'])) {
 
 function get_produtos($tipo_consulta) {
     $conn = conectar();
-    if($tipo_consulta == 1) {
-        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1";
-    } else if($tipo_consulta == 2) {
-        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2";
+
+    if ($_SESSION['tipo'] == 1) 
+    {
+        if($tipo_consulta == 1) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1 AND status_produto=1";
+        } else if($tipo_consulta == 2) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2 AND status_produto=1";
+        } else {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE status_produto=1";
+        }
     } else {
-        $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
+        if($tipo_consulta == 1) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1";
+        } else if($tipo_consulta == 2) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2";
+        } else {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
+        }   
     }
+    
 
     try {
         $stmt = $conn->query($sql);
@@ -47,8 +60,8 @@ function aceitar_produto($id_produto)
 {
     try {
         $conn = conectar();
-        $sql = "UPDATE produtos SET status = 1 WHERE id_produto = :ID_PRODUTO;";
-        $instrucao = $conn->prepare($sql);
+        $sql = "UPDATE produtos SET status_produto = 1 WHERE id_produto = :ID_PRODUTO;";
+        $instrucao = $conn->prepare($sql);  
         $instrucao->bindParam(":ID_PRODUTO", $id_produto);
         $instrucao->execute();
         header('Location: create_read_home.php');

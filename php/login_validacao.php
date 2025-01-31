@@ -6,7 +6,7 @@ function login($email, $senha) {
     try {
         $conn = conectar();
 
-        $sql = "SELECT nome, email, senha FROM usuario WHERE email = :email AND senha = :senha";
+        $sql = "SELECT nome, email, senha, tipo FROM usuario WHERE email = :email AND senha = :senha";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email); 
         $stmt->bindParam(':senha', $senha);
@@ -19,6 +19,7 @@ function login($email, $senha) {
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC); // Extrai o resultado como array associativo
             $_SESSION['email'] = $email;
             $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['tipo'] = $usuario['tipo'];
             echo "Usuário encontrado!"; 
             header('Location: create_read_home.php');
             exit();   
