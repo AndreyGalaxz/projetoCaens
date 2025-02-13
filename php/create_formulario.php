@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-   
+    include 'funcoes_produtos.php';
 
     echo '<h2>Dados no arquivo formulario.php</h2>';
 
@@ -16,10 +16,11 @@
 
     echo 'descricao: '.$descricao.'<br>';
     echo 'dataHora: '.$dataHora.'<br>';
-    echo 'tipo: '.$tipo.'<br>';
+    echo 'tipo: '.$tipo.'<br>'; // tipo 1 == comum tipo 0 == admin
+    echo 'email: '.$_SESSION['email'].'<br>';
     
-    include 'funcoes_produtos.php';
-    cadastrar_produto($descricao,$dataHora,$tipo);
+    
+    cadastrar_produto($descricao,$dataHora,$tipo, $_SESSION['email']);
     ?>
 
    

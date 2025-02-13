@@ -12,8 +12,7 @@ CREATE TABLE produtos (
     descricao VARCHAR(255) NOT NULL,
     datahora DATETIME NOT NULL,
     tipo INT NOT NULL,
-    status INT NOT NULL,
-    id_usuario INT,
-    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+    status_produto INT NOT NULL,
+    email VARCHAR(100) NOT NULL
 );
 

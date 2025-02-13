@@ -11,24 +11,31 @@ if (isset($_GET['valor'])) {
 function get_produtos($tipo_consulta) {
     $conn = conectar();
 
-    if ($_SESSION['tipo'] == 1) 
-    {
+    $email_logado = $_SESSION['email']; // O e-mail do usuário logado
+
+    if ($_SESSION['tipo'] == 1) { // tipo 1 == comum
         if($tipo_consulta == 1) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1 AND status_produto=1";
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+                    WHERE tipo = 1 
+                    AND (status_produto = 1 OR email = '$email_logado')";
         } else if($tipo_consulta == 2) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2 AND status_produto=1";
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+                    WHERE tipo = 2 
+                    AND (status_produto = 1 OR email = '$email_logado')";
         } else {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE status_produto=1";
+            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+                    WHERE (status_produto = 1 OR email = '$email_logado')";
         }
-    } else {
+    } else { // tipo 0 == admin
         if($tipo_consulta == 1) {
             $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1";
         } else if($tipo_consulta == 2) {
             $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2";
         } else {
             $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
-        }   
+        }
     }
+
     
 
     try {

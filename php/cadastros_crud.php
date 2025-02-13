@@ -19,15 +19,16 @@ function cadastrar_usuario($nome, $email, $senha)
 }
 
 
-function cadastrar_produto($descricao, $dataHora, $tipo)
+function cadastrar_produto($descricao, $dataHora, $tipo, $email)
 {
     try {
         $conn = conectar();
-        $sql = "INSERT INTO produtos(descricao, dataHora, tipo) VALUES (:DESCRICAO, :DATAHORA, :TIPO)";
+        $sql = "INSERT INTO produtos(descricao, dataHora, tipo, email) VALUES (:DESCRICAO, :DATAHORA, :TIPO, :EMAIL)";
         $instrucao = $conn->prepare($sql);
         $instrucao->bindParam(":DESCRICAO", $descricao);
         $instrucao->bindParam(":DATAHORA", $dataHora);
         $instrucao->bindParam(":TIPO", $tipo);
+        $instrucao->bindParam(":EMAIL", $email);
         $instrucao->execute();
         header('Location: create_read_home.php');
     } catch (PDOException $e) {
