@@ -67,6 +67,7 @@
                 <?php
                 session_start();
                 include '../php/funcoes_produtos.php';
+
                 $tipo_consulta = $tipo_consulta ?? 3;
                 echo 'email usuario:' . htmlspecialchars($_SESSION['email']) . '';
                 echo 'nome usuario:' . htmlspecialchars($_SESSION['nome']) . '';
@@ -78,12 +79,13 @@
                     2 => 'Perdido',
                     default => 'Desconhecido',
                 };
-
+                
                 echo '<tr class="linha_produtos_home">';
                 echo '<td class="produto_home">' . htmlspecialchars($linha["id_produto"]) . '</td>';
                 echo '<td class="produto_home">' . htmlspecialchars($linha["descricao"]) . '</td>';
                 echo '<td class="produto_home">' . htmlspecialchars($linha["dataHora"]) . '</td>';
                 echo '<td class="produto_home">' . $tipoTexto . '</td>';
+                
                 echo '<td class="produto_home"><a class="btnAceitar" href="../php/aceitar_produto.php?id_produto=' 
                     . htmlspecialchars($linha["id_produto"]) 
                     . '" onclick="return confirm(\'Tem certeza que deseja aceitar este produto?\');">Aceitar</a></td>';
@@ -91,7 +93,13 @@
                 echo '<td class="produto_home"><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' 
                     . htmlspecialchars($linha["id_produto"]) 
                     . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
-
+                    /*                                                                                                                                              
+                    btnAceitar
+                    btnExcluir
+                    se o usuário for membro
+                    não mostrar os botões de aceitar e excluir                                                       
+                    
+                    */
                 echo '</tr>';
                 }   
                 ?>

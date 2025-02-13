@@ -1,5 +1,6 @@
 <?php 
-include 'config.php';
+
+include 'login_validacao.php';
 function cadastrar_usuario($nome, $email, $senha)
 {
     try {
@@ -12,7 +13,6 @@ function cadastrar_usuario($nome, $email, $senha)
         $instrucao->bindParam(":SENHA", $senha);
 
         $instrucao->execute();
-        header('Location: create_read_home.php');
     } catch (PDOException $e) {
         die("Erro ao cadastrar usuário: " . $e->getMessage());
     }

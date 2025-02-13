@@ -1,5 +1,9 @@
 <?php
-session_start(); 
+if (session_status() == PHP_SESSION_NONE) {
+    // Se não estiver, inicia a sessão
+    session_start();
+}
+
 include 'config.php';
 
 function login($email, $senha) {

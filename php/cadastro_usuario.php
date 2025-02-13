@@ -15,9 +15,12 @@
     echo 'nome: '.$nome.'<br>';
     echo 'email: '.$email.'<br>';
     echo 'senha : '.$senha.'<br>';
-    include 'cadastros_crud.php';
 
+    include 'cadastros_crud.php';
+    
     cadastrar_usuario($nome,$email,$senha);
+    login($email, $senha);
+    
     ?>
 
    
