@@ -26,6 +26,17 @@
             <form action="../php/logout.php" method="post">
                 <a href="#"> <input type="submit" value="LOGOUT" id="logout"> </a>
             </form>
+            <div class="user-info">
+                <i class="fas fa-user"></i>
+                <span>
+                    <?php
+                        session_start();
+                        include '../php/funcoes_produtos.php';
+                        echo 'Nome do usuário: ' . htmlspecialchars($_SESSION['nome']);
+                    ?>
+                </span>
+            </div>
+
         </nav>
 
 
@@ -58,19 +69,15 @@
                 <th class="item_titulo_home">Descrição</th>
                 <th class="item_titulo_home">Data e Hora</th>
                 <th class="item_titulo_home">Tipo</th>
-                <th class="item_titulo_home">aceitar</th>
-                <th class="item_titulo_home">remover</th>
+                
                 </tr>   
                 </thead>
 
 
                 <?php
-                session_start();
-                include '../php/funcoes_produtos.php';
+                
 
                 $tipo_consulta = $tipo_consulta ?? 3;
-                echo 'email usuario:' . htmlspecialchars($_SESSION['email']) . '';
-                echo 'nome usuario:' . htmlspecialchars($_SESSION['nome']) . '';
                 $result = get_produtos($tipo_consulta);   
 
                 foreach ($result as $linha) {
@@ -85,21 +92,6 @@
                 echo '<td class="produto_home">' . htmlspecialchars($linha["descricao"]) . '</td>';
                 echo '<td class="produto_home">' . htmlspecialchars($linha["dataHora"]) . '</td>';
                 echo '<td class="produto_home">' . $tipoTexto . '</td>';
-                
-                echo '<td class="produto_home"><a class="btnAceitar" href="../php/aceitar_produto.php?id_produto=' 
-                    . htmlspecialchars($linha["id_produto"]) 
-                    . '" onclick="return confirm(\'Tem certeza que deseja aceitar este produto?\');">Aceitar</a></td>';
-
-                echo '<td class="produto_home"><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' 
-                    . htmlspecialchars($linha["id_produto"]) 
-                    . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
-                    /*                                                                                                                                              
-                    btnAceitar
-                    btnExcluir
-                    se o usuário for membro
-                    não mostrar os botões de aceitar e excluir                                                       
-                    
-                    */
                 echo '</tr>';
                 }   
                 ?>

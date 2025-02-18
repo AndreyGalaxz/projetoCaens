@@ -30,7 +30,13 @@ function cadastrar_produto($descricao, $dataHora, $tipo, $email)
         $instrucao->bindParam(":TIPO", $tipo);
         $instrucao->bindParam(":EMAIL", $email);
         $instrucao->execute();
-        header('Location: create_read_home.php');
+        if ($_SESSION['tipo'] == 1) {
+            header('Location: create_read_home_user.php');
+        } else {
+        
+            header('Location: create_read_home.php');
+        }
+        
     } catch (PDOException $e) {
         die("Erro ao cadastrar produto: " . $e->getMessage());
     }

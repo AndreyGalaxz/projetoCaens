@@ -1,0 +1,15 @@
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.user-info i {
+    
+    font-size: 24px;
+    margin-right: 10px;
+}
+.user-info span {
+    color: antiquewhite;
+    font-size: 18px;
+}

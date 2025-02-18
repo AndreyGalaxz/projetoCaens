@@ -25,8 +25,13 @@ function login($email, $senha) {
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['tipo'] = $usuario['tipo'];
             echo "Usuário encontrado!"; 
-            header('Location: create_read_home.php');
-            exit();   
+            if($usuario['tipo'] == 0) {
+                header('Location: create_read_home.php');
+                exit();   
+            } else {
+                header('Location: create_read_home_user.php');
+                exit();   
+            } 
         } else {
             echo "Email ou senha incorretos!";
         }

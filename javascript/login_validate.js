@@ -1,3 +1,12 @@
+const botaoCadastro = document.querySelector("#cadastro");
+
+botaoCadastro.addEventListener("click", () => {
+    console.log("cadastrando...")    
+
+
+}
+)
+
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 

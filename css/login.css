@@ -17,16 +17,23 @@ body {
     width: 400px;
 }
 
+
 .login-observacoes {
     display: flex;
     align-items: center;
     justify-content: center ;
-    color: #142912;
+    
 }
 
-.login-observacoes a {
+.loginBotoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     margin-top: 10px;
+    height: 40px;
+    text-align: center;
 }
+
 
 #logoCaensLogin {                                                                       
     width: 40%;
@@ -50,8 +57,8 @@ label {
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 0.5em;
+    border: 1px solid #8b8b8b;
+    border-radius: 0.2em;
 }
 
 button {

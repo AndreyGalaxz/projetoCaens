@@ -16,7 +16,9 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
-
+.LinkBotoesCadastro {
+    margin-top: 5px;
+}
 .cadastro-observacoes {
     display: flex;
     align-items: center;
@@ -50,8 +52,8 @@ label {
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 0.5em;
+    border: 1px solid #8b8b8b;
+    border-radius: 0.2em;
 }
 
 button {
@@ -74,4 +76,8 @@ button:hover {
     color: rgb(158, 0, 0);
     font-size: 12px;
     display: none;
+}
+#login {
+    
+    margin-top: 10px;
 }
