@@ -13,7 +13,6 @@ CREATE TABLE produtos (
     datahora DATETIME NOT NULL,
     tipo INT NOT NULL,
     status_produto INT NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
     imagem VARCHAR(255)
 );
-

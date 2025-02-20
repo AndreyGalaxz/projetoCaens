@@ -14,29 +14,27 @@ function get_produtos($tipo_consulta) {
     $email_logado = $_SESSION['email']; // O e-mail do usuário logado
 
     if ($_SESSION['tipo'] == 1) { // tipo 1 == comum
-        if($tipo_consulta == 1) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+        if ($tipo_consulta == 1) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos 
                     WHERE tipo = 1 
                     AND (status_produto = 1 OR email = '$email_logado')";
-        } else if($tipo_consulta == 2) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+        } else if ($tipo_consulta == 2) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos 
                     WHERE tipo = 2 
                     AND (status_produto = 1 OR email = '$email_logado')";
         } else {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos 
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos 
                     WHERE (status_produto = 1 OR email = '$email_logado')";
         }
     } else { // tipo 0 == admin
-        if($tipo_consulta == 1) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 1";
-        } else if($tipo_consulta == 2) {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos WHERE tipo = 2";
+        if ($tipo_consulta == 1) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos WHERE tipo = 1";
+        } else if ($tipo_consulta == 2) {
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos WHERE tipo = 2";
         } else {
-            $sql = "SELECT id_produto, descricao, dataHora, tipo FROM produtos";
+            $sql = "SELECT id_produto, descricao, dataHora, tipo, imagem FROM produtos";
         }
     }
-
-    
 
     try {
         $stmt = $conn->query($sql);
