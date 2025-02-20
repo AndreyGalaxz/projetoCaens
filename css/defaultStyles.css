@@ -124,4 +124,20 @@ main {
     border-radius: 50px;
     padding: 2px 10px;
     background-color: var(--cor-tag);
-}                                                                                          
+}               
+nav button, nav input[type="submit"] {
+    background-color:#2e5634;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: 0.2s;
+    border:none;
+    margin: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+nav button:hover, nav input[type="submit"]:hover {
+    background-color: #39603e;
+}                                                                           

@@ -8,7 +8,8 @@
     
     <link rel="stylesheet" href="../css/defaultStyles.css">
     <link rel="stylesheet" href="../css/home.css">
-
+    <link rel="stylesheet" href="../css/user.css">
+    
     <title>Projeto CAENS - FEED</title>
 </head>
 
@@ -32,7 +33,7 @@
                     <?php
                         session_start();
                         include '../php/funcoes_produtos.php';
-                        echo 'Nome do usuário: ' . htmlspecialchars($_SESSION['nome']);
+                        echo 'Usuário: ' . htmlspecialchars($_SESSION['nome']);
                     ?>
                 </span>
             </div>
@@ -100,7 +101,7 @@
         </section>
     </main>
     
-    <script src="../javascript/home.js"></script>
+    <script src= "../javascript/home.js"></script>
 </body>
 
 </html>

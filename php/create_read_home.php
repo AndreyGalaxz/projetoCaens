@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" href="../css/defaultStyles.css">
+    <link rel="stylesheet" href="../css/defaultStyle.css">
     <link rel="stylesheet" href="../css/home.css">
 
     <title>Projeto CAENS - FEED</title>

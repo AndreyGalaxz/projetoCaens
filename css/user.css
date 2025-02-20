@@ -1,8 +1,8 @@
 
 .user-info {
     display: flex;
-    align-items: center;
     font-family: Arial, sans-serif;
+    align-items: center;
 }
 .user-info i {
     
@@ -10,6 +10,6 @@
     margin-right: 10px;
 }
 .user-info span {
-    color: antiquewhite;
+    color: white;
     font-size: 18px;
 }

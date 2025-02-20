@@ -61,7 +61,7 @@ input {
     border-radius: 0.2em;
 }
 
-button {
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #019c22;
@@ -72,8 +72,8 @@ button {
     font-size: 16px;
 }
 
-button:hover {
-    background-color: #00e60b;
+input[type="submit"]:hover {
+    background-color: #09b712;
 }
 
 .error {
