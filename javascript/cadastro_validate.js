@@ -14,7 +14,7 @@ document.getElementById('cadastroForm').addEventListener('submit', function (eve
     const confirmarSenhaError = document.getElementById('confirmarSenhaError');
 
     // Regex para validar o e-mail
-    const emailRegex = /^[a-zA-Z]+@ifba\.edu\.br$/;
+    const emailRegex = /^[a-zA-Z0-9]+@ifba\.edu\.br$/;
 
     // Limpa mensagens de erro
     nomeError.textContent = '';

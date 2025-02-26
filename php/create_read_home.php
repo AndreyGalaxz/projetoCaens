@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/defaultStyles.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/user.css">
     <title>Projeto CAENS - FEED</title>
 	
     <script type="text/javascript">
@@ -65,39 +66,36 @@
             </form>
         </section>
         <section class="produtos-cadastrados">
-            <h2 id="titulo_produtos_cadastrados">PRODUTOS</h2>
-            <table class="container_produtos_home">
-                <thead>
-                    <tr>
-                        <th>Imagem</th>
-                        <th>Código</th>
-                        <th>Descrição</th>
-                        <th>Data e Hora</th>
-                        <th>Tipo</th>
-                        <th>Aceitar</th>
-                        <th>Remover</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $tipo_consulta = $tipo_consulta ?? 3;
-                    $result = get_produtos($tipo_consulta);
-                    foreach ($result as $linha) {
-                        $tipoTexto = $linha["tipo"] == 1 ? 'Achado' : 'Perdido';
-                        echo '<tr>';
-                        echo '<td><img src="' . htmlspecialchars($linha["imagem"]) . '" width="100"></td>';
-                        echo '<td>' . htmlspecialchars($linha["id_produto"]) . '</td>';
-                        echo '<td>' . htmlspecialchars($linha["descricao"]) . '</td>';
-                        echo '<td>' . htmlspecialchars($linha["dataHora"]) . '</td>';
-                        echo '<td>' . $tipoTexto . '</td>';
-                        echo '<td><a class="btnAceitar" href="../php/aceitar_produto.php?id_produto=' . htmlspecialchars($linha["id_produto"]) . '" onclick="return confirm(\'Tem certeza que deseja aceitar este produto?\');">Aceitar</a></td>';
-                        echo '<td><a class="btnExcluir" href="../php/delete_produto.php?id_produto=' . htmlspecialchars($linha["id_produto"]) . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a></td>';
-                        echo '</tr>';
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </section>
+    <h2 id="titulo_produtos_cadastrados">PRODUTOS</h2>
+    <div class="feed-admin"> <!-- Container do feed -->
+
+        <?php
+        $tipo_consulta = $tipo_consulta ?? 3;
+        $result = get_produtos($tipo_consulta);
+
+        foreach ($result as $linha) {
+            $tipoTexto = $linha["tipo"] == 1 ? 'Achado' : 'Perdido';
+            $imagem = !empty($linha["imagem"]) ? htmlspecialchars($linha["imagem"]) : "placeholder.jpg";  
+            
+            echo '<div class="post-admin">';
+            echo '  <div class="post-content-admin">';
+            echo '      <img src="' . $imagem . '" alt="Imagem do produto" class="produto-imagem">';
+            echo '      <div class="post-info-admin">';
+            echo '          <p><strong>Descrição:</strong> ' . htmlspecialchars($linha["descricao"]) . '</p>';
+            echo '          <p><strong>Data:</strong> ' . htmlspecialchars($linha["dataHora"]) . '</p>';
+            echo '          <p class="tipo-item-admin"><strong>Tipo:</strong> ' . $tipoTexto . '</p>';
+            echo '      </div>';
+            echo '  </div>';
+            echo '  <div class="admin-actions">';
+            echo '      <a class="btnAceitar" href="../php/aceitar_produto.php?id_produto=' . htmlspecialchars($linha["id_produto"]) . '" onclick="return confirm(\'Tem certeza que deseja aceitar este produto?\');">Aceitar</a>';
+            echo '      <a class="btnExcluir" href="../php/delete_produto.php?id_produto=' . htmlspecialchars($linha["id_produto"]) . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a>';
+            echo '  </div>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+</section>
+
     </main>
     <script src="../javascript/home.js"></script>
 </body>

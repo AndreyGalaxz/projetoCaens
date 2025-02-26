@@ -1,8 +1,9 @@
 
 .user-info {
     display: flex;
-    font-family: Arial, sans-serif;
     align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
 }
 .user-info i {
     
