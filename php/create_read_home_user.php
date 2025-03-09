@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/defaultStyles.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <title>Projeto CAENS - FEED</title>
 	
     <script type="text/javascript">
@@ -30,8 +32,8 @@
             <button id="todos">TODOS</button>
             <button id="achados">ACHADOS</button>
             <button id="perdidos">PERDIDOS</button>
-            <button id="request">REQUEST</button>
-            <form action="../php/logout.php" method="post">
+            <button id="request">PENDÊNCIAS</button>
+            <form action="../php/logout.php" method="post">.
                 <input type="submit" value="LOGOUT" id="logout">
             </form>
             <div class="user-info">
@@ -40,7 +42,7 @@
                     <?php
                         session_start();
                         include '../php/funcoes_produtos.php';
-                        echo 'Nome do usuário: ' . htmlspecialchars($_SESSION['nome']);
+                        echo htmlspecialchars($_SESSION['nome']);
                     ?>
                 </span>
             </div>
@@ -82,9 +84,12 @@
             echo '      <img src="' . $imagem . '" alt="Imagem do produto" class="produto-imagem">';
             echo '      <div class="post-info-admin">';
             echo '          <p><strong>Descrição:</strong> ' . htmlspecialchars($linha["descricao"]) . '</p>';
-            echo '          <p><strong>Data e Hora:</strong> ' . htmlspecialchars($linha["dataHora"]) . '</p>';
+            echo '          <p><strong>Data:</strong> ' . htmlspecialchars($linha["dataHora"]) . '</p>';
             echo '          <p class="tipo-item-admin"><strong>Tipo:</strong> ' . $tipoTexto . '</p>';
             echo '      </div>';
+            echo '  </div>';
+            echo '  <div class="admin-actions">';
+            echo '      <a class="btnExcluir" href="../php/delete_produto.php?id_produto=' . htmlspecialchars($linha["id_produto"]) . '" onclick="return confirm(\'Tem certeza que deseja excluir este produto?\');">Excluir</a>';
             echo '  </div>';
             echo '</div>';
         }

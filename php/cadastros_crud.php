@@ -30,17 +30,19 @@ function cadastrar_usuario($nome, $email, $senha)
             try {
                 //Server settings
                 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                $mail->CharSet = "UTF-8";
+                // Looking to send emails in production? Check out our Email API/SMTP product!
+                $mail->CharSet = 'UTF-8';
+                $mail = new PHPMailer();
                 $mail->isSMTP();
-                $mail->Host       = 'sandbox.smtp.mailtrap.io';
-                $mail->SMTPAuth   = true;
-                $mail->Username   = 'fe2bb66ef29b77';
-                $mail->Password   = '3fe63e06c3f396';
+                $mail->Host = 'sandbox.smtp.mailtrap.io';
+                $mail->SMTPAuth = true;
+                $mail->Port = 2525;
+                $mail->Username = '2f5d52540847c8';
+                $mail->Password = '69d6f61055c3d2';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port       = 2525;
 
                 //Recipients
-                $mail->setFrom('andreyoliveira.dev@gmail.com', 'Andrey');
+                $mail->setFrom('juliascoite@gmail.com', 'Julha');
                 $mail->addAddress($dados['email'], $dados['nome']);
 
                 $mail->isHTML(true);                                  //Set email format to HTML
@@ -50,6 +52,7 @@ function cadastrar_usuario($nome, $email, $senha)
 
                 $mail->send();
 
+                $retorna = ['erro' => false, 'msg' => "<div class='alert alert-success' role='alert'>Usuário cadastrado com sucesso! Confirme o e-mail para liberar o acesso.</div>"];
 
             } catch (Exception $e) {
                 //$retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não cadastrado com sucesso!</div>"];

@@ -1,7 +1,52 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.post-section {
+  width: 100%;
+  max-width: 1050px; /* Mantém um limite para telas grandes */
+  margin: 20px auto;
+  padding: 20px;
+  background: #d8cfbc;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .post-section h2 {
-  font-size: 16px; 
+  font-size: 16px;
+  font-weight: bold; 
   color: #444;
 } 
+
+.post-section input,
+.post-section select,
+.post-section button {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+}
+
+.post-section input[type="text"], 
+.post-section input[type="date"],
+.post-section select {
+    background: #fdfbf6;
+    border: 1px solid #C4B69B;
+}
+
+.post-section input::placeholder {
+  color: #7B7B7B;
+}
 
 .post-section .add-tag {
   background-color: #AEA283;
@@ -15,17 +60,36 @@
   justify-content: space-between;
 }
 .post-section .buttons button {
+  background: #2E5D3D;
+  color: white;
+  font-weight: bold;
   margin: 1em;
   padding: 10px 40px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
 }
+
+.post-section .buttons button:hover {
+  background: #244A31;
+}
+
+.post-section #foto-preview {
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
 .post-section textarea {
   width: 100%;
   height: 6em;
   border-radius: 10px;
   background-color: #f5f0e3;
+}
+
+
+.post:hover {
+  transform: scale(1.05);
 }
 
 
@@ -266,141 +330,136 @@ echo '<th class="item_titulo_home">Código</th>';
   color: #990000;
 }
 
-.feed {
+.feed, .feed-admin {
   display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaço entre os itens */
-  max-width: 600px;
-  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Diminui o gap entre os posts para mais posts na tela */
+  width: 100%;
+  padding: 0 50px; /* Aumenta o padding lateral para dar mais espaço */
 }
 
-.post {
+.post, .post-admin {
+  flex: 1 1 600px; /* Aumenta a largura base das postagens para */
+  max-width: 500px; /* Aumenta a largura máxima das postagens */
   background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #6d4c41; /* Cor padrão */
-  transition: 0.3s ease-in-out;
-}
-
-.post:hover {
-  transform: scale(1.25);
-}
-
-.post p {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-.tipo-item {
-  font-weight: bold;
-}
-
-/* Cores diferentes para "Achado" e "Perdido" */
-.post .tipo-item {
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.post .tipo-item:contains("Achado") {
-  color: #007bff;
-}
-
-.post .tipo-item:contains("Perdido") {
-  color: #71000b;
-}
-
-.feed-admin {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 20px auto;
-}
-
-.post-admin {
-  background: #fff;
-  padding: 15px;
+  padding: 20px; /* Aumenta o padding interno para mais espaço */
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border-left: 5px solid #6d4c41;
-  transition: 0.3s ease-in-out;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Alinha a imagem e os textos lado a lado */
-.post-content-admin {
+.post:hover, .post-admin:hover {
+  transform: scale(1.05);
+}
+
+.post-content, .post-content-admin {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Estiliza a imagem */
 .produto-imagem {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ddd;
 }
 
-/* Estiliza as informações do produto */
-.post-info-admin {
+.post-info, .post-info-admin {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-/* Botões de ação */
+.post-info, .post-info-admin p {
+  margin: 4px 0;
+}
+
+.tipo-item, .tipo-item-admin {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block; /* Faz com que o texto ocupe toda a largura do contêiner */
+}
+
+@media (max-width: 768px) {
+  .post-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post, .post-admin {
+    width: 90%;
+  }
+}
+
 .admin-actions {
-  margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end; /* Alinha os botões à direita */
+  gap: 10px; /* Espaço entre os botões */
+  margin-top: 10px; /* Espaço superior opcional */
+}
+
+/* Botões de ação (exibidos apenas para admin) */
+.btnAceitar, .btnExcluir {
+  padding: 12px 20px; /* Maior espaçamento */
+  border-radius: 8px; /* Bordas arredondadas, consistente com o restante do layout */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px; /* Texto maior para mais legibilidade */
+  transition: 0.3s ease-in-out;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Leve sombra */
 }
 
 /* Botão Aceitar */
 .btnAceitar {
-  background-color: #28a745;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease-in-out;
+  background-color: #2E5D3D; /* Verde escuro, coerente com os outros botões */
+  color: #fff;
 }
 
 .btnAceitar:hover {
-  background-color: #218838;
+  background-color: #244A31; /* Tom mais escuro no hover */
 }
 
 /* Botão Excluir */
 .btnExcluir {
-  background-color: #dc3545;
+  background-color: #8B3A3A; /* Tom vermelho terroso, mais suave */
   color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease-in-out;
 }
 
 .btnExcluir:hover {
-  background-color: #c82333;
+  background-color: #702E2E; /* Tom mais escuro no hover */
 }
 
-/* Diferencia os tipos "Achado" e "Perdido" */
-.tipo-item-admin {
-  font-weight: bold;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre ícone e nome */
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  background: #0a3d11; /* Fundo leve para destacar */
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tipo-item-admin:contains("Achado") {
-  background-color: #007bff;
+.user-info i {
+  font-size: 22px; /* Ícone um pouco maior */
+  color: #ffffff; /* Azul moderno */
 }
 
-.tipo-item-admin:contains("Perdido") {
-  background-color: #dc3545;
+.user-info .span {
+  color: #333 !important;
 }
