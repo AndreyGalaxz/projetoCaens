@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <title>Cadastro usuário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="../css/cadastro_usuario.css">
 </head>
 <body>
-    <?php
-    echo '<h2>Dados no arquivo cadastro_usuario.php</h2>';
+    <div class="container">
+        <?php
+        echo '<h2>Dados do Cadastro</h2>';
 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];       
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];       
 
-    echo 'nome: '.$nome.'<br>';
-    echo 'email: '.$email.'<br>';
-   
+        echo '<p><strong>Nome:</strong> ' . htmlspecialchars($nome, ENT_QUOTES, 'UTF-8') . '</p>';
+        echo '<p><strong>Email:</strong> ' . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . '</p>';
 
-    include 'cadastros_crud.php';
-    
-    cadastrar_usuario($nome,$email,$senha);
-    echo 'verifique o email para ativar a conta';
-    
-    ?>
-
-   
+        include 'cadastros_crud.php';
+        
+        cadastrar_usuario($nome, $email, $senha);
+        echo '<p class="verificacao">Verifique o e-mail para ativar a conta.</p>';
+        ?>
+    </div>
 </body>
 </html>

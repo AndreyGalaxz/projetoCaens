@@ -1,0 +1,62 @@
+/* Importando fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2E8B57, #3CB371);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Caixa de conteúdo */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Título */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Texto de exibição dos dados */
+p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #f1f1f1;
+}
+
+/* Destacar os dados */
+p strong {
+    color: #ffeb3b;
+}
+
+/* Mensagem de verificação */
+.verificacao {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffff99;
+    margin-top: 20px;
+}

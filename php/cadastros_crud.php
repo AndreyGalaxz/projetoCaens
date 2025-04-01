@@ -37,16 +37,19 @@ function cadastrar_usuario($nome, $email, $senha)
                 $mail->Host = 'sandbox.smtp.mailtrap.io';
                 $mail->SMTPAuth = true;
                 $mail->Port = 2525;
-                $mail->Username = '2f5d52540847c8';
-                $mail->Password = '69d6f61055c3d2';
+                $mail->Username = 'fe2bb66ef29b77';
+                $mail->Password = '3fe63e06c3f396';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 //Recipients
-                $mail->setFrom('juliascoite@gmail.com', 'Julha');
+                $mail->setFrom('andreyoliveira.dev@gmail.com', 'Andrey Oliveira');
                 $mail->addAddress($dados['email'], $dados['nome']);
 
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'Confirma o e-mail';
+                $mail->CharSet = 'UTF-8';
+                $mail->Encoding = 'base64';
+
                 $mail->Body    = "Prezado(a) " . $dados['nome'] . ".<br><br>Agradecemos a sua solicitação de cadastramento em nosso site!<br><br>Para que possamos liberar o seu cadastro em nosso sistema, solicitamos a confirmação do e-mail clicanco no link abaixo: <br><br> <a href='http://localhost/projetoCaens/php/confirmar_email.php?chave=$chave'>Clique aqui</a><br><br>Esta mensagem foi enviada a você pela CAENS.<br>Você está recebendo porque está cadastrado no banco de dados de achados e perdidos da CAENS. Nenhum e-mail enviado tem arquivos anexados ou solicita o preenchimento de senhas e informações cadastrais.<br><br>" ;
                 $mail->AltBody = "Prezado(a) " . $dados['nome'] . ".\n\nAgradecemos a sua solicitação de cadastramento em nosso site!\n\nPara que possamos liberar o seu cadastro em nosso sistema, solicitamos a confirmação do e-mail clicanco no link abaixo: \n\n http://localhost/projetoCaens/php/confirmar_email.php?chave=$chave \n\nEsta mensagem foi enviada a você pela CAENS.\nVocê está recebendo porque está cadastrado no banco de dados de achados e perdidos da CAENS. Nenhum e-mail enviado tem arquivos anexados ou solicita o preenchimento de senhas e informações cadastrais.\n\n";
 
